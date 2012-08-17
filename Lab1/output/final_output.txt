@@ -1,0 +1,100 @@
+Zachary Lumpkins
+
+String "AAABBB":
+
+  Language One = PASSED
+  Language Two = PASSED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "AB":
+
+  Language One = PASSED
+  Language Two = PASSED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "ABABABA":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "ABAB":
+
+  Language One = PASSED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = PASSED
+
+String "BBAA":
+
+  Language One = PASSED
+  Language Two = PASSED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "BBBAA":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "AAB":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "ABBBA":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "ABBA":
+
+  Language One = PASSED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "ABAABBAAABBB":
+
+  Language One = PASSED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = FAILED
+
+String "AABBBAABBB":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = PASSED
+
+String "AAABBBBBAAABBBBB":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = PASSED
+
+String "ABB":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = PASSED
+  Language Four = FAILED
+
+String "BABAB":
+
+  Language One = FAILED
+  Language Two = FAILED
+  Language Three = FAILED
+  Language Four = PASSED
+
