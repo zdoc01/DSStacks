@@ -220,10 +220,13 @@ public class LabOne {
 		
 		char 	ch;
 		char	chZero;
+		char 	chValue;
+		char	test;
 		int		maxItems;
 		Boolean	stackOneEmpty;
 		Boolean	stackTwoEmpty;
 		String	error;
+		String  bee;
 		
 		CharacterStack stackOne;
 		CharacterStack stackTwo;
@@ -233,7 +236,8 @@ public class LabOne {
 		stackOne = new Stacks.CharacterStack(maxItems);
 		stackTwo = new Stacks.CharacterStack(maxItems);
 		
-		// Push A's and B's onto separate stacks. If the second character changes back to the first then break out of the loop and return false (no repeats allowed).
+		// Push A's and B's onto separate stacks. If the second character changes back to the first then 
+		// break out of the loop and return false (no repeats allowed).
 		chZero = w.charAt(0);
 		error =	"";
 		for (int i = 0; i < w.length(); i++) {
@@ -245,7 +249,8 @@ public class LabOne {
 			} 
 			else if (ch != chZero) {
 				
-				//once the character changes, start from the new character's position in the string and continue processing until it changes again.
+				// once the character changes, start from the new character's position in the string and 
+				// continue processing until it changes again.
 				for (int z = i; z < w.length(); z++) {
 				
 					ch = w.charAt(z);
@@ -263,10 +268,16 @@ public class LabOne {
 			}
 		}
 		
-		// If the characters only changed once then pop each stack an equal number of times while characters exist in the first stack.
+		// If the characters only changed once then pop each stack an equal number of 
+		// times while characters exist in the first stack.
 		stackOneEmpty = null;
-		stackTwoEmpty = null;	
+		stackTwoEmpty = null;
+		bee = "B";
+		test = stackOne.peek();
+		chValue = bee.charAt(0);
 		if (error.equals("fail"))
+			return false;
+		else if (test == chValue)
 			return false;
 		else 
 			while (stackOne.isEmpty() != true) {
@@ -368,8 +379,6 @@ public class LabOne {
 	
 	public boolean languageFour(String w) {
 		
-		System.out.println(w);
-		
 		char 	ch;
 		char	chZero;
 		int		maxItems;
@@ -393,7 +402,7 @@ public class LabOne {
 		sizeOfTwo = 0;
 		nextSizeOne = 0;
 		nextSizeTwo = 0;
-		error =	"";
+		error="";
 		for (int i = 0; i < w.length(); i++) {
 
 			ch = w.charAt(i);
@@ -404,17 +413,14 @@ public class LabOne {
 			else if (ch != chZero) {
 				
 				//once the character changes, start from the new character's position in the string and continue processing until it changes again.
-				//also set an error flag when processing each letter to indicate whether or not the string repeats - if it does not then the string fails L4.
 				for (int z = i; z < w.length(); z++) {
 				
 					ch = w.charAt(z);
 					
 					if (ch != stackOne.peek()) {
-						error = "fail";
 						stackTwo.push(ch);
 					} 
 					else if (ch == chZero) {
-						error = "";
 						sizeOfOne = stackOne.size();
 						sizeOfTwo = stackTwo.size();
 						
@@ -432,26 +438,23 @@ public class LabOne {
 							ch = w.charAt(n);
 							
 							if (stackOne.isEmpty() == true || ch == stackOne.peek()) {
-								//error = "fail";
 								stackOne.push(ch);
 							}
 							else if (ch != stackOne.peek()) {
-								//error = "";
 								stackTwo.push(ch);
 								
 								nextSizeOne = stackOne.size();
 								nextSizeTwo = stackTwo.size();
-				
-								//break;
 							}
 						}
 						
 						//when finished processing the patterns check the stack sizes to see if they are the same - if so then string passes L4.
-						if (nextSizeOne == sizeOfOne && nextSizeTwo == sizeOfTwo)
+						if (nextSizeOne == sizeOfOne && nextSizeTwo == sizeOfTwo) {
+							error="";
 							return true;
-						else if (error.equals("fail"))
-							return false;
+						}
 						else
+							error="fail";
 							return false;
 					}
 				}
